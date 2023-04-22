@@ -18,7 +18,7 @@ export class WorkService {
   }
 
   displayWork() {
-    return this.workRepository.find();
+    return this.workRepository.find({ select: ["id", "title", "link"] });
   }
 
   updateWork(id: number, workData: UpdateWorkDto) {
