@@ -80,7 +80,7 @@ export class WorkController {
     @Res() res: Response,
   ) {
     try {
-      const { title, link } = updateWorkData;
+      const { title, link, hidden } = updateWorkData;
       if (file) {
         var filePath: string = file.path;
       }
@@ -89,6 +89,7 @@ export class WorkController {
         id,
         title,
         link,
+        hidden,
         filePath,
       );
       return res.status(HttpStatus.OK).json({

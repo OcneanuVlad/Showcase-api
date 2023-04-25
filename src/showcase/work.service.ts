@@ -29,13 +29,20 @@ export class WorkService {
     });
   }
 
-  async updateWork(id: number, title: string, link: string, file: string) {
+  async updateWork(
+    id: number,
+    title: string,
+    link: string,
+    hidden: boolean,
+    file: string,
+  ) {
     const result = await this.workRepository.update(
       { id },
       {
         title: title,
         link: link,
         file: file,
+        hidden: hidden,
       },
     );
     return result;
