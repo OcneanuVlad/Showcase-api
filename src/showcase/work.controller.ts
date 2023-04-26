@@ -45,10 +45,17 @@ export class WorkController {
     @UploadedFile() file: any,
     @Res() res: any,
   ) {
-    const { title, link } = createWorkData;
-    const filePath = file.path;
+    try {
+      const { title, link } = createWorkData;
+      const filePath = file.path;
 
-    await this.workService.createWork(title, link, filePath);
+      const newWork = await this.workService.createWork(title, link, filePath);
+
+      res.status(201).json({ work: newWork });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Failed to create work' });
+    }
   }
 
   @Get()
