@@ -11,7 +11,7 @@ import { Work } from 'src/typeorm/entities/Work.model';
       host: 'sql972.main-hosting.eu',
       port: 3306,
       username: 'u956818894_admin',
-      password: 'z4E:HI&KW4#',
+      password: 'p+BtjT1R',
       database: 'u956818894_showcase',
       entities: [Work],
       synchronize: true,
