@@ -49,8 +49,6 @@ export class WorkController {
     const filePath = file.path;
 
     await this.workService.createWork(title, link, filePath);
-
-    return res.redirect('http://localhost:3001/');
   }
 
   @Get()
